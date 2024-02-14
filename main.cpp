@@ -16,9 +16,9 @@
 #include <cstdlib>
 using namespace std;
 
-// this - указатель на текущий объект
-// virtual - говорит о том что эту функцию наследник может переписать
-// ctrl + shift + f - найти и заменить
+// this - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С‚РµРєСѓС‰РёР№ РѕР±СЉРµРєС‚
+// virtual - РіРѕРІРѕСЂРёС‚ Рѕ С‚РѕРј С‡С‚Рѕ СЌС‚Сѓ С„СѓРЅРєС†РёСЋ РЅР°СЃР»РµРґРЅРёРє РјРѕР¶РµС‚ РїРµСЂРµРїРёСЃР°С‚СЊ
+// ctrl + shift + f - РЅР°Р№С‚Рё Рё Р·Р°РјРµРЅРёС‚СЊ
 
 
 int main()
@@ -35,35 +35,35 @@ int main()
    Division division(number4, number3);
    Subtraction subtraction(number4, number2);
 
-   cout << "Выражение: ";
+   cout << "Р’С‹СЂР°Р¶РµРЅРёРµ: ";
    multiplication.print();
    cout << "\n";
 
    double result1 = multiplication.eval();
-   cout << "Результат: " << result1 << "\n\n";
+   cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << result1 << "\n\n";
 
-   cout << "Выражение: ";
+   cout << "Р’С‹СЂР°Р¶РµРЅРёРµ: ";
    division.print();
    cout << "\n";
    double result2 = division.eval();
-   cout << "Результат: " << result2 << "\n\n";
+   cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << result2 << "\n\n";
 
-   cout << "Выражение: ";
+   cout << "Р’С‹СЂР°Р¶РµРЅРёРµ: ";
    subtraction.print();
    cout << "\n";
    double result3 = subtraction.eval();
-   cout << "Результат: " << result3 << "\n\n";
+   cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << result3 << "\n\n";
 
    Addition addition1(number1, number2);
    Subtraction subtraction1(number4, number1);
    Multiplication multiplication1(addition1, subtraction1);
    Division division1(multiplication1, number2);
 
-   cout << "Выражение: ";
+   cout << "Р’С‹СЂР°Р¶РµРЅРёРµ: ";
    division1.print();
    cout << "\n";
    double result4 = division1.eval();
-   cout << "Результат: " << result4 << "\n\n";
+   cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << result4 << "\n\n";
 
    return 0;
 }
