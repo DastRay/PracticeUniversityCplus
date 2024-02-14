@@ -1,0 +1,232 @@
+
+////////////////////////// Лекция №1 ///////////////////////////////////////
+class Point
+{
+public:
+   Point() {};
+   Point(double set_x, double set_y) 
+   { x = set_x; y = set_y; };
+   ~Point() {};
+
+
+   Point operator+(Point& p)
+   {
+      return Point(x + p.x, y + p.y);
+   }
+
+   bool operator==(Point& p)
+   {
+      return (x == p.get_x()) && (x == p.get_y());
+   }
+
+   bool operator!=(Point& p)
+   {
+      return !(*this == p);
+   }
+
+   double distance(Point p2)
+   {
+      return sqrt((x - p2.get_x()) * (x - p2.get_x()) + (y - p2.get_y()) * (y - p2.get_y()));
+   }
+
+
+   double get_x();
+   double get_y();
+   void set_x(double set_x);
+   void set_y(double set_y);
+
+private:
+   double x;
+   double y;
+};
+
+double Point::get_x()
+{
+   return x;
+}
+
+double Point::get_y()
+{
+   return y;
+}
+
+void Point::set_x(double set_x)
+{
+   x = set_x;
+}
+
+void Point::set_y(double set_y)
+{
+   y = set_y;
+}
+
+
+class Rectangle
+{
+private:
+   int x;
+   int y;
+   int len_x;
+   int len_y;
+
+public:
+   Rectangle() {};
+   Rectangle(int set_x, int set_y, int set_len_x, int set_len_y)
+   {
+      x = set_x; y = set_y; len_x = set_len_x; len_y = set_len_y;
+   }
+};
+
+class  Square : Rectangle
+{
+private:
+   int x;
+   int y;
+   int len;
+
+public:
+   Square() {};
+   Square(int set_x, int set_y, int set_len)
+   {
+      x = set_x; y = set_y; len = set_len;
+   }
+
+};
+
+
+int main()
+{
+
+   return 0;
+}
+
+
+////////////////////////// Лекция №2 ///////////////////////////////////////
+
+class Number1 {
+
+public:
+   Number1(int x, int y)
+      : x(x), y(y)
+   { }
+
+   ~Number1()
+   {
+      cout << "Вызван деструктор" << endl;
+   }
+
+private:
+   int x;
+   int y;
+};
+
+int main()
+{
+   setlocale(LC_ALL, "Russian");
+
+   Number1 One(5, 6);
+
+   return 0;
+}
+
+
+
+class DecimalCounter
+{
+public:
+   DecimalCounter() 
+   {
+      count = rand() % 10;
+   }
+
+   DecimalCounter(int count)
+      : count(count) { }
+
+   ~DecimalCounter()
+   {
+      cout << "Вызван деструткор\n" << endl;
+   }
+
+   void PlusOne()
+   {
+      count++;
+   }
+
+   void MinusOne()
+   {
+      count--;
+   }
+
+   void getCount() 
+   { 
+      cout << "Count: " << count << "\n";
+   }
+
+private:
+   int count;
+};
+
+int main()
+{
+   setlocale(LC_ALL, "Russian");
+
+   cout << "Счётчик №1\n";
+   DecimalCounter One = DecimalCounter();
+   One.getCount();
+   One.PlusOne();
+   One.getCount();
+   One.MinusOne();
+   One.getCount();
+
+   cout << "\nСчётчик №2\n";
+   DecimalCounter Two(10);
+   Two.getCount();
+   Two.PlusOne();
+   Two.getCount();
+   Two.MinusOne();
+   Two.getCount();
+
+   return 0;
+}
+
+class A
+{
+public:
+   virtual int getCount() { // virtual - говорит о том что эту функцию наследник может переписать
+      return count;
+   }
+
+private:
+   int count;
+   char* name;
+
+protected:
+   char* get_name() {
+      return name;
+   }
+};
+
+class B : public A {
+
+};
+
+
+class Triang
+{
+   Coord vert1, vert2, vert3;
+
+
+   double midx() {};
+};
+
+class Coord {
+   double x, y, z;
+
+   friend double Triang::midx() {};
+};
+
+
+double Triang::midx() {
+
+   vert1.x + vert2.y + vert3.z;
+}
